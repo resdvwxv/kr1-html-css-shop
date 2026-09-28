@@ -110,3 +110,40 @@ if (scrollTopBtn) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
+// ===============================
+// 5. Форма обратной связи (contacts.html)
+// ===============================
+
+const feedbackForm = document.getElementById('feedback-form');
+const successMessageFeedback = document.getElementById('success-message-feedback');
+
+if (feedbackForm && successMessageFeedback) {
+  feedbackForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const formElements = Array.from(feedbackForm.elements);
+    formElements.forEach((element) => {
+      if (element.willValidate) {
+        element.removeAttribute('aria-invalid');
+      }
+    });
+
+    if (!feedbackForm.checkValidity()) {
+      formElements.forEach((element) => {
+        if (element.willValidate && !element.checkValidity()) {
+          element.setAttribute('aria-invalid', 'true');
+        }
+      });
+      feedbackForm.reportValidity();
+      return;
+    }
+
+    successMessageFeedback.hidden = false;
+    feedbackForm.reset();
+
+    setTimeout(() => {
+      successMessageFeedback.hidden = true;
+    }, 5000);
+  });
+}

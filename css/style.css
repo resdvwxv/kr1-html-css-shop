@@ -65,13 +65,19 @@ body {
 .site-header__inner {
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
 }
 
 .site-header__logo {
   font-weight: 700;
   color: var(--color-text);
   text-decoration: none;
+  font-size: 20px;
+  white-space: nowrap;
 }
 
 /* --- Навигация (site-nav) --- */
@@ -545,7 +551,63 @@ a:focus-visible {
 }
 
 /* ===============================
-10. Адаптивность сетки товаров
+10. Форма обратной связи (feedback-form)
+=============================== */
+
+.feedback-form__field {
+  margin-bottom: var(--space-md);
+}
+
+.feedback-form__label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
+}
+
+.feedback-form__input,
+.feedback-form__select,
+.feedback-form__textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+}
+
+.feedback-form__input:hover,
+.feedback-form__select:hover,
+.feedback-form__textarea:hover {
+  border-color: var(--color-primary);
+}
+
+.feedback-form__input:focus-visible,
+.feedback-form__select:focus-visible,
+.feedback-form__textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.feedback-form__field--checkbox label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.feedback-form__field--checkbox input[type="checkbox"] {
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.feedback-form__actions {
+  margin-top: var(--space-lg);
+}
+
+/* ===============================
+11. Адаптивность сетки товаров
 =============================== */
 
 @media (max-width: 768px) {
