@@ -57,6 +57,9 @@ body {
 
 .site-header {
   background-color: var(--color-surface);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .site-header__inner {
@@ -195,6 +198,16 @@ body {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background-color: var(--color-bg);
+  position: relative;
+}
+
+.product-card__image {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
 }
 
 .product-card:hover {
@@ -233,12 +246,58 @@ body {
   align-self: flex-start;
 }
 
+/* --- Бейдж карточки товара --- */
+
+.product-card__badge {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-white);
+  background-color: var(--color-danger);
+  border-radius: var(--radius-sm);
+}
+
 /* --- Сетка товаров (products-grid) --- */
 
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
+}
+
+/* --- Таблица (product-table) --- */
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.product-table caption {
+  text-align: left;
+  font-weight: 700;
+  font-size: 16px;
+  padding-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.product-table th,
+.product-table td {
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.product-table thead {
+  background-color: var(--color-surface-accent);
+}
+
+.product-table th {
+  font-weight: 700;
+  color: var(--color-text);
 }
 
 /* --- Сетка каталога (catalog-layout) --- */
@@ -407,4 +466,107 @@ a:focus-visible {
 :target {
   outline: 2px dashed var(--color-primary);
   outline-offset: 4px;
+}
+
+/* ===============================
+7. Страница карточки товара
+=============================== */
+
+.product-detail__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.product-detail__image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.product-detail__title {
+  margin-top: 0;
+  font-size: 28px;
+}
+
+.product-detail__description {
+  color: var(--color-muted);
+}
+
+.product-detail__price {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.product-detail__price--big {
+  font-size: 28px;
+}
+
+/* ===============================
+8. Страница заявки (order-page)
+=============================== */
+
+.order-page__form {
+  max-width: 600px;
+  margin-top: var(--space-lg);
+}
+
+/* ===============================
+9. Кнопка «Наверх» (scroll-top)
+=============================== */
+
+.scroll-top {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 200;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-top:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* ===============================
+10. Адаптивность сетки товаров
+=============================== */
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-detail__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .filters-form fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
 }

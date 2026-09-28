@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Главная страница учебного интернет-магазина.">
     <title>Учебный интернет-магазин</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
@@ -18,6 +19,12 @@
                     </li>
                     <li class="site-nav__item">
                         <a class="site-nav__link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="product.html">Товар</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="order.html">Заявка</a>
                     </li>
                     <li class="site-nav__item">
                         <a class="site-nav__link" href="contacts.html">Контакты</a>
@@ -57,27 +64,32 @@
         <section class="section" id="popular">
             <h2>Популярные товары</h2>
             <div class="products-grid">
-            <article class="product-card product-card--featured">
-                <h3 class="product-card__title">Товар 1</h3>
-                <p class="product-card__description">Краткое описание учебного товара.</p>
-                <p class="product-card__price">Цена: 1000 руб.</p>
-                <button class="button button--primary product-card__button" type="button" data-product="Товар 1">
+            <article class="product-card product-card--discount">
+                <span class="product-card__badge">Хит</span>
+                <img class="product-card__image" src="images/Shapec.png" alt="Шапец — головной убор статуса">
+                <h3 class="product-card__title">Шапец</h3>
+                <p class="product-card__description">Больше чем просто головной убор — абсолютный символ стиля и статуса в Сумеречной роще.</p>
+                <p class="product-card__price">Цена: 5 000 руб.</p>
+                <button class="button button--primary product-card__button" type="button" data-product="Шапец">
                     Заказать
                 </button>
             </article>
             <article class="product-card product-card--featured">
-                <h3 class="product-card__title">Товар 2</h3>
-                <p class="product-card__description">Краткое описание учебного товара.</p>
-                <p class="product-card__price">Цена: 1500 руб.</p>
-                <button class="button button--primary product-card__button" type="button" data-product="Товар 2">
+                <img class="product-card__image" src="images/Bitubisas.png" alt="Битубизес — цифровая лицензия">
+                <h3 class="product-card__title">Битубизес</h3>
+                <p class="product-card__description">Зазеркальный маркер надежности и личной эффективности. Создаётся Большим Алмазом Inc.</p>
+                <p class="product-card__price">Цена: 2 500 руб.</p>
+                <button class="button button--primary product-card__button" type="button" data-product="Битубизес">
                     Заказать
                 </button>
             </article>
-            <article class="product-card product-card--featured">
-                <h3 class="product-card__title">Товар 3</h3>
-                <p class="product-card__description">Краткое описание учебного товара.</p>
-                <p class="product-card__price">Цена: 2000 руб.</p>
-                <button class="button button--primary product-card__button" type="button" data-product="Товар 3">
+            <article class="product-card product-card--discount">
+                <span class="product-card__badge">Новинка</span>
+                <img class="product-card__image" src="images/Morkovniy_piatky.png" alt="Морковные пятки — гастрономическое открытие">
+                <h3 class="product-card__title">Морковные пятки</h3>
+                <p class="product-card__description">Изысканное зазеркальное блюдо: нежные плоды с огорода бабы Жули. При сборе издают хохот.</p>
+                <p class="product-card__price">Цена: 800 руб.</p>
+                <button class="button button--primary product-card__button" type="button" data-product="Морковные пятки">
                     Заказать
                 </button>
             </article>
@@ -92,6 +104,8 @@
             </p>
         </aside>
     </main>
+    <a class="scroll-top" href="#" aria-label="Наверх">↑</a>
+
     <footer class="site-footer" id="contacts">
         <p>&copy; 2026 Учебный проект. Все права защищены.</p>
         <p>Дисциплина: Фронтенд и бэкенд разработка</p>
@@ -137,7 +151,7 @@
                     type="tel"
                     inputmode="tel"
                     placeholder="+7 (900) 000-00-00"
-                    pattern="^\+?7 \d{3} \d{3}-\d{2}-\d{2}$"
+                    pattern="^[\\+]?[0-9\\s\\-\\(\\)]{10,20}$"
                     required
                 >
             </div>
