@@ -199,6 +199,13 @@ body {
   border-radius: var(--radius-md);
   background-color: var(--color-bg);
   position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 87, 184, 0.15);
 }
 
 .product-card__image {
@@ -208,10 +215,6 @@ body {
   object-fit: contain;
   border-radius: var(--radius-sm);
   background-color: var(--color-surface);
-}
-
-.product-card:hover {
-  border-color: var(--color-primary);
 }
 
 .product-card--featured {
