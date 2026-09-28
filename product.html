@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Карточка товара — учебный интернет-магазин.">
+    <title>Товар — Учебный интернет-магазин</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="site-header__logo" href="index.html">ShopProject</a>
+            <nav class="site-nav" aria-label="Основная навигация">
+                <ul class="site-nav__list">
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="index.html">Главная</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a class="site-nav__link site-nav__link--active" href="product.html">Товар</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="order.html">Заявка</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="contacts.html">Контакты</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <a class="breadcrumbs__link" href="index.html">Главная</a>
+            <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+            <span class="breadcrumbs__current">Учебный ноутбук Pro 15</span>
+        </nav>
+        <section class="section product-detail">
+            <div class="product-detail__inner">
+                <div class="product-detail__media">
+                    <img
+                        class="product-detail__image"
+                        src="images/Shapec.png"
+                        alt="Фото Шапца — головного убора статуса в Сумеречной роще"
+                        width="400"
+                        height="300"
+                    >
+                </div>
+                <div class="product-detail__info">
+                    <h1 class="product-detail__title">Шапец</h1>
+                    <p class="product-detail__description">
+                        Больше чем просто головной убор — это абсолютный символ стиля и
+                        весомого статуса в Сумеречной роще. Обладает подтвержденным авторитетом:
+                        при встрече с Подмыханом гарантирует бесплатный и беспрепятственный
+                        проход по его территории. Это единственный артефакт, способный усмирить
+                        истинную форму Алефтины и спасти от её молота.
+                    </p>
+
+                    <p class="product-detail__price product-detail__price--big">
+                        Цена: 5 000 руб.
+                    </p>
+
+                    <button
+                        class="button button--primary product-detail__order-btn"
+                        type="button"
+                        data-product="Шапец"
+                    >
+                        Оставить заявку
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="characteristics">
+            <h2>Характеристики</h2>
+            <table class="product-table">
+                <caption>Технические характеристики товара</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Параметр</th>
+                        <th scope="col">Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Категория</td>
+                        <td>Одежда и статус</td>
+                    </tr>
+                    <tr>
+                        <td>Материал</td>
+                        <td>Спектральная слюда повышенной плотности</td>
+                    </tr>
+                    <tr>
+                        <td>Эффект</td>
+                        <td>+100% к уважению прохожих в Сумеречном лесу</td>
+                    </tr>
+                    <tr>
+                        <td>Совместимость</td>
+                        <td>Защита от молотов любого калибра</td>
+                    </tr>
+                    <tr>
+                        <td>Авторитет</td>
+                        <td>При встрече с Подмыханом — бесплатный проход по его территории</td>
+                    </tr>
+                    <tr>
+                        <td>Особое свойство</td>
+                        <td>Единственный артефакт, способный усмирить истинную форму Алефтины</td>
+                    </tr>
+                    <tr>
+                        <td>Наличие</td>
+                        <td>В наличии</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section">
+            <h2>Похожие товары</h2>
+            <div class="products-grid">
+                <a href="bitubisas.html" class="product-card product-card--featured" aria-label="Битубизес — 2 500 руб.">
+                    <img class="product-card__image" src="images/Bitubisas.png" alt="Битубизес — цифровая лицензия">
+                    <h3 class="product-card__title">Битубизес</h3>
+                    <p class="product-card__description">Зазеркальный маркер надежности и личной эффективности. Создаётся Большим Алмазом Inc.</p>
+                    <p class="product-card__price">Цена: 2 500 руб.</p>
+                </a>
+                <a href="morkovnye-piatki.html" class="product-card product-card--discount" aria-label="Морковные пятки — 800 руб.">
+                    <span class="product-card__badge">Новинка</span>
+                    <img class="product-card__image" src="images/Morkovniy_piatky.png" alt="Морковные пятки">
+                    <h3 class="product-card__title">Морковные пятки</h3>
+                    <p class="product-card__description">Нежные плоды с огорода бабы Жули. При сборе издают морковный хохот.</p>
+                    <p class="product-card__price">Цена: 800 руб.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно заявки -->
+    <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+        <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+        <form class="order-form" id="order-form" action="#" method="post" novalidate>
+            <input id="selected-product" name="selected-product" type="hidden">
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="order-name">Имя</label>
+                <input
+                    class="order-form__input"
+                    id="order-name"
+                    name="name"
+                    type="text"
+                    placeholder="Введите ваше имя"
+                    minlength="2"
+                    autocomplete="given-name"
+                    required
+                >
+            </div>
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="order-email">E-mail</label>
+                <input
+                    class="order-form__input"
+                    id="order-email"
+                    name="email"
+                    type="email"
+                    placeholder="example@mail.ru"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="order-phone">Телефон</label>
+                <input
+                    class="order-form__input"
+                    id="order-phone"
+                    name="phone"
+                    type="tel"
+                    inputmode="tel"
+                    placeholder="+7 (900) 000-00-00"
+                    pattern="^[\\+]?[0-9\\s\\-\\(\\)]{10,20}$"
+                    required
+                >
+            </div>
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="order-topic">Тема заявки</label>
+                <select class="order-form__select" id="order-topic" name="topic" required>
+                    <option value="">Выберите тему</option>
+                    <option value="product">Заказ товара</option>
+                    <option value="consultation">Консультация</option>
+                    <option value="delivery">Доставка</option>
+                </select>
+            </div>
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="order-comment">Комментарий</label>
+                <textarea
+                    class="order-form__textarea"
+                    id="order-comment"
+                    name="comment"
+                    rows="4"
+                    placeholder="Укажите дополнительную информацию"
+                ></textarea>
+            </div>
+
+            <div class="order-form__field order-form__field--checkbox">
+                <label>
+                    <input
+                        id="order-agreement"
+                        name="agreement"
+                        type="checkbox"
+                        required
+                    >
+                    Я согласен на обработку данных
+                </label>
+            </div>
+
+            <div class="order-form__actions">
+                <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
+                <button class="button button--primary" type="submit">Отправить заявку</button>
+            </div>
+        </form>
+    </dialog>
+
+    <a class="scroll-top" href="#" aria-label="Наверх">↑</a>
+
+    <p class="success-message" id="success-message" hidden>
+        Форма успешно отправлена!
+    </p>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+        <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    </footer>
+</body>
+</html>

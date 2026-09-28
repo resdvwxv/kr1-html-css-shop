@@ -6,6 +6,7 @@
     <meta name="description" content="Каталог товаров учебного интернет-магазина.">
     <title>Каталог товаров — Учебный интернет-магазин</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header class="site-header">
@@ -20,6 +21,12 @@
                         <a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a>
                     </li>
                     <li class="site-nav__item">
+                        <a class="site-nav__link" href="product.html">Товар</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a class="site-nav__link" href="order.html">Заявка</a>
+                    </li>
+                    <li class="site-nav__item">
                         <a class="site-nav__link" href="contacts.html">Контакты</a>
                     </li>
                     <li class="site-nav__item">
@@ -27,9 +34,6 @@
                     </li>
                     <li class="site-nav__item">
                         <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
-                    </li>
-                    <li class="site-nav__item">
-                        <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
                     </li>
                 </ul>
             </nav>
@@ -80,34 +84,32 @@
             <section class="catalog-products">
                 <h2>Список товаров</h2>
                 <div class="products-grid">
-                    <article class="product-card product-card--featured">
-                        <h3 class="product-card__title">Товар 1</h3>
-                        <p class="product-card__description">Краткое описание учебного товара.</p>
-                        <p class="product-card__price">Цена: 1000 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Товар 1">
-                            Заказать
-                        </button>
-                    </article>
-                    <article class="product-card product-card--featured">
-                        <h3 class="product-card__title">Товар 2</h3>
-                        <p class="product-card__description">Краткое описание учебного товара.</p>
-                        <p class="product-card__price">Цена: 1500 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Товар 2">
-                            Заказать
-                        </button>
-                    </article>
-                    <article class="product-card product-card--featured">
-                        <h3 class="product-card__title">Товар 3</h3>
-                        <p class="product-card__description">Краткое описание учебного товара.</p>
-                        <p class="product-card__price">Цена: 2000 руб.</p>
-                        <button class="button button--primary product-card__button" type="button" data-product="Товар 3">
-                            Заказать
-                        </button>
-                    </article>
+                    <a href="product.html" class="product-card product-card--discount" aria-label="Шапец — 5 000 руб.">
+                        <span class="product-card__badge">Хит</span>
+                        <img class="product-card__image" src="images/Shapec.png" alt="Шапец — головной убор статуса">
+                        <h3 class="product-card__title">Шапец</h3>
+                        <p class="product-card__description">Больше чем просто головной убор — абсолютный символ стиля и статуса в Сумеречной роще.</p>
+                        <p class="product-card__price">Цена: 5 000 руб.</p>
+                    </a>
+                    <a href="bitubisas.html" class="product-card product-card--featured" aria-label="Битубизес — 2 500 руб.">
+                        <img class="product-card__image" src="images/Bitubisas.png" alt="Битубизес — цифровая лицензия">
+                        <h3 class="product-card__title">Битубизес</h3>
+                        <p class="product-card__description">Зазеркальный маркер надежности и личной эффективности. Создаётся Большим Алмазом Inc.</p>
+                        <p class="product-card__price">Цена: 2 500 руб.</p>
+                    </a>
+                    <a href="morkovnye-piatki.html" class="product-card product-card--discount" aria-label="Морковные пятки — 800 руб.">
+                        <span class="product-card__badge">Новинка</span>
+                        <img class="product-card__image" src="images/Morkovniy_piatky.png" alt="Морковные пятки — гастрономическое открытие">
+                        <h3 class="product-card__title">Морковные пятки</h3>
+                        <p class="product-card__description">Изысканное зазеркальное блюдо: нежные плоды с огорода бабы Жули. При сборе издают хохот.</p>
+                        <p class="product-card__price">Цена: 800 руб.</p>
+                    </a>
                 </div>
             </section>
         </section>
     </main>
+    <a class="scroll-top" href="#" aria-label="Наверх">↑</a>
+
     <footer class="site-footer">
         <p>&copy; 2026 Учебный проект. Все права защищены.</p>
         <p>Дисциплина: Фронтенд и бэкенд разработка</p>
