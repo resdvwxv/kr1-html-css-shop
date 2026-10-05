@@ -1,4 +1,29 @@
 // ===============================
+// 0. Загрузка шапки из partials/header.html
+// ===============================
+
+fetch('partials/header.html')
+  .then((response) => response.text())
+  .then((html) => {
+    const placeholder = document.getElementById('header-placeholder');
+    if (placeholder) {
+      placeholder.outerHTML = html;
+      setActiveNavLink();
+    }
+  });
+
+function setActiveNavLink() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.site-nav__link');
+  navLinks.forEach((link) => {
+    const href = link.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('site-nav__link--active');
+    }
+  });
+}
+
+// ===============================
 // 1. Модальное окно (dialog)
 // ===============================
 
@@ -108,5 +133,42 @@ if (scrollTopBtn) {
   scrollTopBtn.addEventListener('click', (event) => {
     event.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// ===============================
+// 5. Форма обратной связи (contacts.html)
+// ===============================
+
+const feedbackForm = document.getElementById('feedback-form');
+const successMessageFeedback = document.getElementById('success-message-feedback');
+
+if (feedbackForm && successMessageFeedback) {
+  feedbackForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const formElements = Array.from(feedbackForm.elements);
+    formElements.forEach((element) => {
+      if (element.willValidate) {
+        element.removeAttribute('aria-invalid');
+      }
+    });
+
+    if (!feedbackForm.checkValidity()) {
+      formElements.forEach((element) => {
+        if (element.willValidate && !element.checkValidity()) {
+          element.setAttribute('aria-invalid', 'true');
+        }
+      });
+      feedbackForm.reportValidity();
+      return;
+    }
+
+    successMessageFeedback.hidden = false;
+    feedbackForm.reset();
+
+    setTimeout(() => {
+      successMessageFeedback.hidden = true;
+    }, 5000);
   });
 }
