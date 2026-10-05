@@ -1,4 +1,29 @@
 // ===============================
+// 0. Загрузка шапки из partials/header.html
+// ===============================
+
+fetch('partials/header.html')
+  .then((response) => response.text())
+  .then((html) => {
+    const placeholder = document.getElementById('header-placeholder');
+    if (placeholder) {
+      placeholder.outerHTML = html;
+      setActiveNavLink();
+    }
+  });
+
+function setActiveNavLink() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.site-nav__link');
+  navLinks.forEach((link) => {
+    const href = link.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('site-nav__link--active');
+    }
+  });
+}
+
+// ===============================
 // 1. Модальное окно (dialog)
 // ===============================
 
